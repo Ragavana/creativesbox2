@@ -10,8 +10,8 @@ function ProductCard({ product }) {
            md:group-hover:scale-105 md:group-hover:shadow-xl">
             <Image
               src={product.thumbnail}
-              alt=""
-              placeholder="./images/image1.jpg"
+              alt="" 
+              placeholder="blur"
               width="300"
               height="300"
               style={{ height: "50% !important", width: "200%" }}

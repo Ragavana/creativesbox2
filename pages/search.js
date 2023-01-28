@@ -6,6 +6,7 @@ import { useSearchContext } from "context/state";
 import { useRouter } from "next/router";
 
 export default function SearchPage() {
+ // https://github.com/themefisher/bigspring-light-nextjs
   return (
     <>
     <h1>Serach</h1>
