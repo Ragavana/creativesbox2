@@ -17,7 +17,7 @@ const ProductPagination = ({ products, authors, currentPage, pagination,isSucces
   return (
     <Base>
       <section className="section">
-        <div className="container">
+        <div className="ml-3 md:ml-0">
           {/* <Posts className="mb-16" posts={currentPosts} authors={authors} />
           <Pagination totalPages={totalPages} currentPage={currentPage} /> */}
           <section id="products">
@@ -125,6 +125,6 @@ export async function getStaticProps() {
       products: response["message"],
       isSuccess: response["success"],
     },
-    revalidate: 43200, // In seconds
+    revalidate: 60, // In seconds
   };
 }

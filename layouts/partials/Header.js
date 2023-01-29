@@ -1,9 +1,15 @@
 import Logo from "@components/Logo";
 import menu from "@config/menu.json";
 import SearchModal from "@layouts/partials/SearchModal";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { IoSearch } from "react-icons/io5";
+import {
+  IoLogIn,
+  IoLogInOutline,
+  IoLogInSharp,
+  IoSearch,
+} from "react-icons/io5";
 
 const Header = () => {
   // distructuring the main menu from menu object
@@ -28,7 +34,7 @@ const Header = () => {
     <>
       <header
         className={`sticky top-0 z-50 bg-white py-2 transition-all ${
-          navFixed ? "shadow" : "pt-8 md:pt-16"
+          navFixed ? "shadow" : "pt-8 md:pt-0"
         }`}
       >
         <nav className="navbar container">
@@ -41,7 +47,7 @@ const Header = () => {
           <label
             id="show-button"
             htmlFor="nav-toggle"
-            className="order-2 flex cursor-pointer items-center md:order-1 md:hidden"
+            className="order-2 flex cursor-pointer items-center md:hidden md:order-1"
           >
             <svg className="h-6 fill-current" viewBox="0 0 20 20">
               <title>Menu Open</title>
@@ -65,42 +71,119 @@ const Header = () => {
 
           <ul
             id="nav-menu"
-            className="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto md:space-x-2"
+            className="navbar-nav order-3 hidden w-full md:flex md:w-4/6 md:space-x-2 md:order-1"
           >
             {main.map((menu, i) => (
               <React.Fragment key={`menu-${i}`}>
                 {menu.hasChildren ? (
-                  <li className="nav-item nav-dropdown group relative">
-                    <span className="nav-link inline-flex items-center">
-                      {menu.name}
-                      <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                      </svg>
-                    </span>
-                    <ul className="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
-                      {menu.children.map((child, i) => (
-                        <li className="nav-dropdown-item" key={`children-${i}`}>
-                          <Link
-                            href={child.url}
-                            className="nav-dropdown-link block"
-                          >
-                            {child.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
+                  // <li className="nav-item nav-dropdown group relative">
+                  //   <span className="nav-link inline-flex items-center">
+                  //     {menu.name}
+                  //     <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                  //       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  //     </svg>
+                  //   </span>
+                  //   <ul className="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
+                  //     {menu.children.map((child, i) => (
+                  //       <li className="nav-dropdown-item" key={`children-${i}`}>
+                  //         <Link
+                  //           href={child.url}
+                  //           className="nav-dropdown-link block"
+                  //         >
+                  //           {child.name}
+                  //         </Link>
+                  //       </li>
+                  //     ))}
+                  //   </ul>
+                  // </li>
+                  <></>
                 ) : (
-                  <li className="nav-item">
-                    <Link href={menu.url} className="nav-link block">
-                      {menu.name}
-                    </Link>
-                  </li>
+                  <>
+                    <li className="nav-item hidden md:block">
+                      <Link href={menu.url} className="nav-link block">
+                        {menu.name}
+                      </Link>
+                    </li>
+                    <div className="nav-item block md:hidden capitalize font-semibold text-lg">
+                      {i == 0 ? (
+                        <>
+                          {" "}
+                          <div className="bg-white">
+                            <div className="capitaliz flex flex-col items-center space-y-6 p-14 pb-6 text-center">
+                              <Link legacyBehavior href="">
+                                <a className="group  text-sm text-zinc-500 hover:text-zinc-500">
+                                  Design
+                                </a>
+                              </Link>
+                              <Link legacyBehavior href="">
+                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                  About
+                                </a>
+                              </Link>
+                              <Link legacyBehavior href="">
+                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                  License
+                                </a>
+                              </Link>
+                              <Link legacyBehavior href="">
+                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                  Contact
+                                </a>
+                              </Link>
+                              <Link legacyBehavior href="">
+                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                  Terms & Conditions
+                                </a>
+                              </Link>
+                              <Link legacyBehavior href="">
+                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                  Privacy
+                                </a>
+                              </Link>
+                            </div>
+                            <div className="flex flex-col justify-center p-10">
+                              <p className="text-center text-xs text-zinc-200">
+                                @CreativesBox, INC
+                              </p>
+                              <div className="flex justify-around p-10 pb-80 space-x-7">
+                                <Image
+                                  src={`/images/Favicon.png`}
+                                  alt="something went wrong"
+                                  width={`20`}
+                                  height={`20`}
+                                ></Image>
+                                <Image
+                                  src={`/images/Favicon.png`}
+                                  alt="something went wrong"
+                                  width={`20`}
+                                  height={`20`}
+                                ></Image>
+                                <Image
+                                  src={`/images/Favicon.png`}
+                                  alt="something went wrong"
+                                  width={`20`}
+                                  height={`20`}
+                                ></Image>
+                                <Image
+                                  src={`/images/Favicon.png`}
+                                  alt="something went wrong"
+                                  width={`20`}
+                                  height={`20`}
+                                ></Image>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  </>
                 )}
               </React.Fragment>
             ))}
           </ul>
-          <div className="order-1 ml-auto md:order-2 md:ml-0">
+          <div className="order-1 mr-2 ml-auto flex md:ml-0 md:order-2">
             <div
               className="cursor-pointer p-2 text-xl text-dark hover:text-primary"
               onClick={() => {
@@ -109,6 +192,9 @@ const Header = () => {
             >
               <IoSearch />
             </div>
+            <button className="btn btn-outline-primary hidden text-sm uppercase md:ml-3 md:block">
+              Login
+            </button>
           </div>
 
           <SearchModal

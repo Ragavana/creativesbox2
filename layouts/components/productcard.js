@@ -12,8 +12,10 @@ function ProductCard({ product }) {
               src={product.thumbnail}
               alt="" 
               placeholder="blur"
+              blurDataURL="/images/blursample.png"
               width="300"
               height="300"
+              priority
               style={{ height: "50% !important", width: "200%" }}
             />
 
@@ -25,12 +27,14 @@ function ProductCard({ product }) {
                   {dateFormat(product.data, "fullDate")}
                 </p>
               </div>
-              <button
+              {/* <button
                 className="font-roboto rounded-lg drop-shadow-xl text-sm
                  bg-green-300 px-2 py-2 text-white md:invisible duration-200 md:group-hover:visible md:group-hover:scale-105"
               >
                 Download
-              </button>
+              </button> */}
+              <button className="btn btn-primary uppercase text-sm p-2 md:invisible
+              duration-200 md:group-hover:visible md:group-hover:scale-105">download</button>
             </div>
           </div>
         </Link>

@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Bookworm Next | Personal Blog Theme",
+    "title": "CreativesBox, Inc.",
     "base_url": "/",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "200",
-    "logo_height": "34",
-    "logo_text": "Bookworm Light"
+    "logo_width": "9",
+    "logo_height": "3",
+    "logo_text": "CreativesBox, Inc."
   },
 
   "settings": {
@@ -17,11 +17,11 @@
 
   "params": {
     "tag_manager_id": "",
-    "copyright": "Copyright © 2022 a theme by [themefisher](https://themefisher.com)"
+    "copyright": "Copyright © 2023 a theme by [CreativesBox, Inc.](https://www.creativesbox.com)"
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "CreativesBox, Inc.",
     "meta_image": "/images/og-image.png",
     "meta_description": "Next Boilerplate"
   }

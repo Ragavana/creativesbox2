@@ -1,7 +1,7 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "Design",
       "url": "/"
     },
     {
@@ -13,31 +13,12 @@
       "url": "/contact"
     },
     {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "Elements",
-          "url": "/elements"
-        },
-        {
-          "name": "Privacy Policy",
-          "url": "/privacy-policy"
-        }
-      ]
+      "name": "Terms & Conditions",
+      "url": "/terms"
+    },
+    {
+      "name": "Privacy",
+      "url": "//privacy-policy"
     }
   ],
   "footer": [
@@ -50,11 +31,11 @@
       "url": "/contact"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Terms & Conditions",
+      "url": "/terms"
     },
     {
-      "name": "Privacy Policy",
+      "name": "Privacy",
       "url": "/privacy-policy"
     }
   ]
