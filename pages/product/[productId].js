@@ -8,7 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Base from "@layouts/Baseof";
 import { useState } from "react";
 
-//import { isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import {
   IoArrowBack,
   IoArrowBackCircle,
@@ -91,7 +91,7 @@ function Product({ product, isSuccess }) {
                 infiniteLoop
                 centerMode={true}
                 showThumbs={false}
-                showArrows={true}
+                showArrows={isMobile?false:true}
                 renderArrowNext={(onClickHandler, hasPrev, label) =>
                   hasPrev && (
                     <button
