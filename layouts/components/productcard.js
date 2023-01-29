@@ -6,11 +6,13 @@ function ProductCard({ product }) {
     <>
       <div class="item-container group mr-4 md:p-4 ">
         <Link href={`product/${product.slug}`}>
-          <div class="item rounded-lg shadow-lg bg-white duration-500
-           md:group-hover:scale-105 md:group-hover:shadow-xl">
+          <div
+            class="item rounded-lg bg-white shadow-lg duration-500
+           md:group-hover:scale-105 md:group-hover:shadow-xl"
+          >
             <Image
               src={product.thumbnail}
-              alt="" 
+              alt=""
               placeholder="blur"
               blurDataURL="/images/blursample.png"
               width="300"
@@ -19,9 +21,9 @@ function ProductCard({ product }) {
               style={{ height: "50% !important", width: "200%" }}
             />
 
-            <div className="space-y-2 p-4 flex justify-between items-center">
+            <div className="flex items-center justify-between space-y-2 p-4">
               <div className="space-y-4">
-                <h4 className="font-medium font-roboto">{product.title}</h4>
+                <h4 className="font-roboto font-medium">{product.title}</h4>
                 <p className="text-xs font-light">
                   {" "}
                   {dateFormat(product.data, "fullDate")}
@@ -33,8 +35,12 @@ function ProductCard({ product }) {
               >
                 Download
               </button> */}
-              <button className="btn btn-primary uppercase text-sm p-2 md:invisible
-              duration-200 md:group-hover:visible md:group-hover:scale-105">download</button>
+              <button
+                className="btn btn-primary p-2 text-sm uppercase duration-200
+              md:invisible md:group-hover:visible md:group-hover:scale-105"
+              >
+                download
+              </button>
             </div>
           </div>
         </Link>

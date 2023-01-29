@@ -20,10 +20,12 @@
     "next": "13.0.7",
     "next-mdx-remote": "^4.3.0",
     "react": "18.2.0",
+    "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.7.1",
     "react-loader-spinner": "^5.3.4",
+    "react-responsive-carousel": "^3.2.23",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1"
   },
