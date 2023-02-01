@@ -16,6 +16,18 @@ import {
   IoArrowBackCircleSharp,
   IoArrowForward,
 } from "react-icons/io5";
+import LightGallery from "lightgallery/react";
+// import plugins if you need
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+import "lightgallery/css/lg-video.css";
+import lgVideo from "lightgallery/plugins/video";
+
+// import styles
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import Image from "next/image";
 
 function Product({ product, isSuccess }) {
   const arrowStyles = {
@@ -82,9 +94,95 @@ function Product({ product, isSuccess }) {
       <h1></h1>
       <Base>
         <section className="section">
-          <div>
-            <section id="product">
-              <Carousel
+          <section id="product">
+            <div className="flex flex-col md:flex-row">
+              <div className="w-full bg-white md:w-5/6">
+                <LightGallery
+                  mode="lg-fade"
+                  plugins={[lgZoom, lgThumbnail, lgVideo]}
+                >
+                  {product[0].thumbvedio ? (
+                    <>
+                      <div
+                        key={`thumbvedio-` + product[0]._id}
+                        data-lg-size="1406-1390"
+                        className="bg-white p-2"
+                        data-pinterest-text="Pin it3"
+                        data-tweet-text="lightGallery slide  4"
+                        data-src={product[0].thumbvedio}
+                        data-poster="https://img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg"
+                        data-sub-html="<h4>Visual Soundscapes - Mountains | Planet Earth II | BBC America</h4><p>On the heels of Planet Earth II’s record-breaking Emmy nominations, BBC America presents stunning visual soundscapes from the series' amazing habitats.</p>"
+                      >
+                        <Image
+                          alt={`thumbvedio-` + product[0]._id}
+                          placeholder="blur"
+                          blurDataURL="/images/blursample.png"
+                          width="300"
+                          height="300"
+                          priority
+                          style={{ height: "50% !important", width: "200%" }}
+                          src={product[0].thumbnail}
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                  {product[0].thumbnail ? (
+                    <>
+                      <div
+                        key={`thumbnail-` + product[0]._id}
+                        data-lg-size="1406-1390"
+                        className="bg-white p-2"
+                        data-src={product[0].thumbnail}
+                        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>"
+                      >
+                        <Image
+                          // className="w-full px-4 py-4"
+                          // style={{ height: `70vh` }}
+                          placeholder="blur"
+                          blurDataURL="/images/blursample.png"
+                          width="300"
+                          height="300"
+                          priority
+                          style={{ height: "50% !important", width: "200%" }}
+                          alt={`thumbnail-` + product[0]._id}
+                          src={product[0].thumbnail}
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+
+                  {product[0].image.map((img, index) => {
+                    return (
+                      <div
+                        key={`image-` + index}
+                        data-lg-size="1406-1390"
+                        className="bg-white p-2"
+                        data-src={img}
+                        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>"
+                      >
+                        <Image
+                          placeholder="blur"
+                          blurDataURL="/images/blursample.png"
+                          width="300"
+                          height="300"
+                          priority
+                          style={{ height: "50% !important", width: "200%" }}
+                          alt={`image-` + index}
+                          src={img}
+                        />
+                      </div>
+                    );
+                  })}
+                </LightGallery>
+              </div>
+              <div className="w-full bg-red-500 md:w-3/6"></div>
+            </div>
+
+            {/* <Carousel
                 autoPlay
                 interval="5000"
                 transitionTime="5000"
@@ -155,9 +253,8 @@ function Product({ product, isSuccess }) {
                     </div>
                   );
                 })}
-              </Carousel>
-            </section>
-          </div>
+              </Carousel> */}
+          </section>
         </section>
       </Base>
     </>
