@@ -7,6 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Base from "@layouts/Baseof";
 import { useState } from "react";
+import dateFormat, { masks } from "dateformat";
 
 import { isMobile } from "react-device-detect";
 import {
@@ -15,6 +16,9 @@ import {
   IoArrowBackCircleOutline,
   IoArrowBackCircleSharp,
   IoArrowForward,
+  IoShare,
+  IoShareSharp,
+  IoShareSocial,
 } from "react-icons/io5";
 import LightGallery from "lightgallery/react";
 // import plugins if you need
@@ -179,7 +183,41 @@ function Product({ product, isSuccess }) {
                   })}
                 </LightGallery>
               </div>
-              <div className="w-full bg-red-500 md:w-3/6"></div>
+              <div className="w-full md:w-3/6">
+                <button className="btn btn-outline-primary font-roboto my-3text-sm m-2 capitalize">
+                  <div className="flex flex-row items-center space-x-2">
+                    <IoShareSharp /> <span>Share</span>
+                  </div>
+                </button>
+                <p className="font-roboto mx-2 my-3 text-xl font-bold text-zinc-900">
+                  {product[0].title}
+                </p>
+                <p className="m-2 my-3 text-sm font-light">
+                  {dateFormat(product[0].date, "mediumDate")}
+                </p>
+                {product[0].tags.map((tag, index) => {
+                  return (
+                    <button
+                      key={`tags-` + index}
+                      className="btn btn-outline-grey font-roboto m-1 my-3 text-xs
+                           capitalize"
+                    >
+                      {tag}
+                    </button>
+                  );
+                })}
+                <p className="font-roboto mx-2 my-3 text-lg  text-zinc-900">
+                  {product[0].description}
+                </p>
+                <div className="m-2">
+                  <button
+                    className="btn btn-primary font-roboto 
+                my-3 h-14 w-full text-sm capitalize shadow-sm shadow-primary"
+                  >
+                    Download
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* <Carousel

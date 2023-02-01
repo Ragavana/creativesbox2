@@ -9,3 +9,7 @@
 .btn-outline-primary {
   @apply border-primary bg-transparent hover:bg-primary hover:text-white;
 }
+
+.btn-outline-grey {
+  @apply border-gray-300 bg-transparent hover:bg-gray-700 hover:text-white;
+}

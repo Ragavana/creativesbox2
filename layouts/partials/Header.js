@@ -192,7 +192,7 @@ const Header = () => {
             >
               <IoSearch />
             </div>
-            <button className="btn btn-outline-primary hidden text-sm uppercase md:ml-3 md:block">
+            <button className="btn btn-primary hidden text-sm capitalize md:ml-3 md:block">
               Login
             </button>
           </div>
