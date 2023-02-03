@@ -44,7 +44,7 @@ export default function ContactUs() {
               <p>
                 My approach to design starts with understanding the target
                 audience and their goals, and then using that knowledge to
-                inform every aspect of the design process. Whether it's
+                inform every aspect of the design process. Whether it&apos;s
                 conducting user research, creating wireframes and prototypes, or
                 iterating on designs based on user feedback, I am always focused
                 on creating a seamless and enjoyable user experience.
@@ -52,14 +52,14 @@ export default function ContactUs() {
               <p>
                 In addition to my design skills, I have a strong technical
                 background, with experience in a variety of design tools and
-                programming languages. Whether it's working with Sketch, Figma,
+                programming languages. Whether it&apos;s working with Sketch, Figma,
                 or Adobe Creative Suite, or coding HTML, CSS, and JavaScript, I
                 have the skills and knowledge to bring my designs to life.
               </p>
               <p>
-                If you're looking for a UX/UI designer who brings both a
+                If you&apos;re looking for a UX/UI designer who brings both a
                 creative eye and a commitment to creating user-centered designs,
-                I would be honored to be a part of your team. Let's work
+                I would be honored to be a part of your team. Let&apos;s work
                 together to create digital experiences that engage, inspire, and
                 deliver results.
               </p>
@@ -105,7 +105,7 @@ export default function ContactUs() {
               <p>
                 My approach to design starts with understanding the target
                 audience and their goals, and then using that knowledge to
-                inform every aspect of the design process. Whether it's
+                inform every aspect of the design process. Whether it&apos;s
                 conducting user research, creating wireframes and prototypes, or
                 iterating on designs based on user feedback, I am always focused
                 on creating a seamless and enjoyable user experience.
@@ -113,14 +113,14 @@ export default function ContactUs() {
               <p>
                 In addition to my design skills, I have a strong technical
                 background, with experience in a variety of design tools and
-                programming languages. Whether it's working with Sketch, Figma,
+                programming languages. Whether it&apos;s working with Sketch, Figma,
                 or Adobe Creative Suite, or coding HTML, CSS, and JavaScript, I
                 have the skills and knowledge to bring my designs to life.
               </p>
               <p>
-                If you're looking for a UX/UI designer who brings both a
+                If you&apos;re looking for a UX/UI designer who brings both a
                 creative eye and a commitment to creating user-centered designs,
-                I would be honored to be a part of your team. Let's work
+                I would be honored to be a part of your team. Let&apos;s work
                 together to create digital experiences that engage, inspire, and
                 deliver results.
               </p>
