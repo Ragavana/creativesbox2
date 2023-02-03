@@ -105,7 +105,7 @@ function Product({ product, isSuccess }) {
                   mode="lg-fade"
                   plugins={[lgZoom, lgThumbnail, lgVideo]}
                 >
-                  {product[0].thumbvedio ? (
+                  {/* {product[0].thumbvedio ? (
                     <>
                       <div
                         key={`thumbvedio-` + product[0]._id}
@@ -131,7 +131,7 @@ function Product({ product, isSuccess }) {
                     </>
                   ) : (
                     <></>
-                  )}
+                  )} */}
                   {product[0].thumbnail ? (
                     <>
                       <div
@@ -145,6 +145,7 @@ function Product({ product, isSuccess }) {
                           // className="w-full px-4 py-4"
                           // style={{ height: `70vh` }}
                           placeholder="blur"
+                          className="rounded-b-lg border border-t-4"
                           blurDataURL="/images/blursample.png"
                           width="300"
                           height="300"
@@ -170,6 +171,7 @@ function Product({ product, isSuccess }) {
                       >
                         <Image
                           placeholder="blur"
+                          className="rounded-b-lg border border-t-4"
                           blurDataURL="/images/blursample.png"
                           width="300"
                           height="300"
@@ -184,12 +186,12 @@ function Product({ product, isSuccess }) {
                 </LightGallery>
               </div>
               <div className="w-full md:w-3/6">
-                <button className="btn btn-outline-primary font-roboto my-3text-sm m-2 capitalize">
+                <button className="btn btn-outline-primary my-3text-sm m-2 capitalize">
                   <div className="flex flex-row items-center space-x-2">
                     <IoShareSharp /> <span>Share</span>
                   </div>
                 </button>
-                <p className="font-roboto mx-2 my-3 text-xl font-bold text-zinc-900">
+                <p className="mx-2 my-3 text-xl font-bold text-zinc-900">
                   {product[0].title}
                 </p>
                 <p className="m-2 my-3 text-sm font-light">
@@ -199,23 +201,25 @@ function Product({ product, isSuccess }) {
                   return (
                     <button
                       key={`tags-` + index}
-                      className="btn btn-outline-grey font-roboto m-1 my-3 text-xs
+                      className="btn btn-outline-grey m-1 my-3 text-xs
                            capitalize"
                     >
                       {tag}
                     </button>
                   );
                 })}
-                <p className="font-roboto mx-2 my-3 text-lg  text-zinc-900">
+                <p className="mx-2 my-3 text-lg  text-zinc-900">
                   {product[0].description}
                 </p>
                 <div className="m-2">
-                  <button
-                    className="btn btn-primary font-roboto 
+                  <a href={product[0].source} download>
+                    <button
+                      className="btn btn-primary
                 my-3 h-14 w-full text-sm capitalize shadow-sm shadow-primary"
-                  >
-                    Download
-                  </button>
+                    >
+                      Download
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

@@ -46,6 +46,20 @@
   }
 }
 
+// social icon style
+.social-icons-header {
+  @apply space-x-4;
+  li {
+    @apply inline-block;
+    a {
+      @apply block h-12 w-12 rounded-lg border border-light bg-transparent text-center text-zinc-300 transition hover:border-primary hover:bg-primary hover:text-white;
+      svg {
+        @apply m-auto h-12 text-lg;
+      }
+    }
+  }
+}
+
 .social-icons-simple {
   @apply space-x-2;
   li {

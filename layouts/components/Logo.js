@@ -11,15 +11,17 @@ const Logo = ({ src }) => {
       <Link href="/" className="navbar-brand hidden md:block">
         {src || logo ? (
           <Image
-            width={logo_width.replace("px", "") * 10}
-            height={logo_height.replace("px", "") * 10}
+            // width={logo_width.replace("px", "") * 10}
+            // height={logo_height.replace("px", "") * 10}
+            width={120}
+            height={50}
             src={src ? src : logo}
             alt={title}
             priority
-            style={{
-              height: logo_height.replace("px", "") + "rem",
-              width: logo_width.replace("px", "") + "rem",
-            }}
+            // style={{
+            //   height: logo_height.replace("px", "") + "rem",
+            //   width: logo_width.replace("px", "") + "rem",
+            // }}
           />
         ) : logo_text ? (
           logo_text
@@ -35,10 +37,10 @@ const Logo = ({ src }) => {
             src={src ? src : logo}
             alt={title}
             priority
-            style={{
-              // height: "200px",
-              // width: "50px",
-            }}
+            // style={{
+            //   height: "2000px !important",
+            //   width: "500px !important",
+            // }}
           />
         ) : logo_text ? (
           logo_text

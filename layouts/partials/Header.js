@@ -3,6 +3,7 @@ import menu from "@config/menu.json";
 import SearchModal from "@layouts/partials/SearchModal";
 import Image from "next/image";
 import Link from "next/link";
+import social from "@config/social.json";
 import React, { useEffect, useState } from "react";
 import {
   IoLogIn,
@@ -10,6 +11,7 @@ import {
   IoLogInSharp,
   IoSearch,
 } from "react-icons/io5";
+import Social from "@layouts/components/Social";
 
 const Header = () => {
   // distructuring the main menu from menu object
@@ -100,7 +102,7 @@ const Header = () => {
                 ) : (
                   <>
                     <li className="nav-item hidden md:block">
-                      <Link href={menu.url} className="nav-link block">
+                      <Link href={menu.url} className="nav-link block text-xs">
                         {menu.name}
                       </Link>
                     </li>
@@ -109,43 +111,48 @@ const Header = () => {
                         <>
                           {" "}
                           <div className="bg-white">
-                            <div className="capitaliz flex flex-col items-center space-y-6 p-14 pb-6 text-center">
+                            <div className="capitaliz flex flex-col items-center space-y-2 p-14 pb-6 text-center">
                               <Link legacyBehavior href="">
-                                <a className="group  text-sm text-zinc-500 hover:text-zinc-500">
+                                <a className="group text-lg text-primary hover:text-primary">
                                   Design
                                 </a>
                               </Link>
                               <Link legacyBehavior href="">
-                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                <a className="group  text-lg text-zinc-300 hover:text-primary">
                                   About
                                 </a>
                               </Link>
                               <Link legacyBehavior href="">
-                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                <a className="group  text-lg text-zinc-300 hover:text-primary">
                                   License
                                 </a>
                               </Link>
                               <Link legacyBehavior href="">
-                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                <a className="group  text-lg text-zinc-300 hover:text-primary">
                                   Contact
                                 </a>
                               </Link>
                               <Link legacyBehavior href="">
-                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                <a className="group  text-lg text-zinc-300 hover:text-primary">
                                   Terms & Conditions
                                 </a>
                               </Link>
                               <Link legacyBehavior href="">
-                                <a className="group  text-sm text-zinc-300 hover:text-zinc-800">
+                                <a className="group  text-lg text-zinc-300 hover:text-primary">
                                   Privacy
                                 </a>
                               </Link>
                             </div>
-                            <div className="flex flex-col justify-center p-10">
-                              <p className="text-center text-xs text-zinc-200">
+                            <div className="flex flex-col justify-center p-10 space-y-4">
+                              <p className="text-center text-lg text-zinc-200">
                                 @CreativesBox, INC
                               </p>
-                              <div className="flex justify-around space-x-7 p-10 pb-80">
+                              {/* social icons */}
+                              <Social
+                                source={social}
+                                className="social-icons-header mb-8 pb-80"
+                              />
+                              {/* <div className="flex justify-around space-x-7 p-10 pb-80">
                                 <Image
                                   src={`/images/Favicon.png`}
                                   alt="something went wrong"
@@ -170,7 +177,7 @@ const Header = () => {
                                   width={`20`}
                                   height={`20`}
                                 ></Image>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </>
@@ -192,7 +199,7 @@ const Header = () => {
             >
               <IoSearch />
             </div>
-            <button className="btn btn-primary hidden text-sm capitalize md:ml-3 md:block">
+            <button className="btn btn-primary hidden text-xs capitalize md:ml-3 md:block">
               Login
             </button>
           </div>

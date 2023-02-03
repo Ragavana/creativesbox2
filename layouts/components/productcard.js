@@ -7,13 +7,14 @@ function ProductCard({ product }) {
       <div class="item-container group mr-4 md:p-4 ">
         <Link href={`product/${product.slug}`}>
           <div
-            class="item rounded-lg bg-white shadow-lg duration-500
+            class="item bg-white rounded-2xl shadow-lg duration-500
            md:group-hover:scale-105 md:group-hover:shadow-xl"
           >
             <Image
               src={product.thumbnail}
               alt=""
               placeholder="blur"
+              className="rounded-t-2xl"
               blurDataURL="/images/blursample.png"
               width="300"
               height="300"
@@ -36,8 +37,9 @@ function ProductCard({ product }) {
                 Download
               </button> */}
               <button
-                className="btn btn-primary p-2 text-sm uppercase duration-200
-              md:invisible md:group-hover:visible md:group-hover:scale-105"
+                className="btn btn-primary px-4 py-2 text-sm capitalize duration-200 
+                md:invisible duration-200 md:group-hover:visible md:group-hover:scale-105
+              "
               >
                 download
               </button>
