@@ -110,41 +110,33 @@ const Header = () => {
                       {i == 0 ? (
                         <>
                           {" "}
-                          <div className="bg-white">
+                          <div className="bg-white space-y-3">
                             <div className="capitaliz flex flex-col items-center space-y-2 p-14 pb-6 text-center">
-                              <Link legacyBehavior href="">
-                                <a className="group text-lg text-primary hover:text-primary">
+                              <Link legacyBehavior href="/">
+                                <a className="group  text-primary hover:text-primary">
                                   Design
                                 </a>
                               </Link>
-                              <Link legacyBehavior href="">
-                                <a className="group  text-lg text-zinc-300 hover:text-primary">
+                              <Link legacyBehavior href="/about">
+                                <a className="group   text-zinc-300 hover:text-primary">
                                   About
                                 </a>
                               </Link>
-                              <Link legacyBehavior href="">
-                                <a className="group  text-lg text-zinc-300 hover:text-primary">
-                                  License
-                                </a>
-                              </Link>
-                              <Link legacyBehavior href="">
-                                <a className="group  text-lg text-zinc-300 hover:text-primary">
+                              
+                              <Link legacyBehavior href="/contact">
+                                <a className="group   text-zinc-300 hover:text-primary">
                                   Contact
                                 </a>
                               </Link>
-                              <Link legacyBehavior href="">
-                                <a className="group  text-lg text-zinc-300 hover:text-primary">
+                              <Link legacyBehavior href="/privacy-policy">
+                                <a className="group   text-zinc-300 hover:text-primary">
                                   Terms & Conditions
                                 </a>
                               </Link>
-                              <Link legacyBehavior href="">
-                                <a className="group  text-lg text-zinc-300 hover:text-primary">
-                                  Privacy
-                                </a>
-                              </Link>
+                             
                             </div>
                             <div className="flex flex-col justify-center p-10 space-y-4">
-                              <p className="text-center text-lg text-zinc-200">
+                              <p className="text-center  text-zinc-200">
                                 @CreativesBox, INC
                               </p>
                               {/* social icons */}
