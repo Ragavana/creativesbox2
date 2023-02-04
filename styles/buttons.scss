@@ -13,3 +13,11 @@
 .btn-outline-grey {
   @apply border-gray-300 bg-transparent hover:bg-gray-700 hover:text-white;
 }
+
+.btn-gradient {
+  @apply mr-2 mb-2 rounded-lg bg-gradient-to-b
+  from-[#404040] via-[#2b2b2b] to-[#141414] px-5 py-4
+  text-center font-medium text-white
+  hover:bg-gradient-to-tr focus:ring-4 focus:ring-purple-300 shadow-lg shadow-[#c4c4c4]
+  dark:focus:ring-purple-800;
+}

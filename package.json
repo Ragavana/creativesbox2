@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.6",
     "dateformat": "^5.0.3",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
@@ -27,9 +28,9 @@
     "react-icons": "^4.7.1",
     "react-loader-spinner": "^5.3.4",
     "react-responsive-carousel": "^3.2.23",
+    "react-rounded-image": "^2.0.14",
     "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "@sendgrid/mail": "^7.4.6"
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

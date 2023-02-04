@@ -31,6 +31,9 @@ const ProductPagination = ({ products, authors, currentPage, pagination,isSucces
                     return (
                       <>
                         <ProductCard product={product} />
+                        <ProductCard product={product} />
+                        <ProductCard product={product} />
+                        <ProductCard product={product} />
                       </>
                     );
                   })}

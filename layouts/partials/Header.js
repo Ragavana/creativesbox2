@@ -102,7 +102,7 @@ const Header = () => {
                 ) : (
                   <>
                     <li className="nav-item hidden md:block">
-                      <Link href={menu.url} className="nav-link block text-xs">
+                      <Link href={menu.url} className="nav-link block text-sm">
                         {menu.name}
                       </Link>
                     </li>
