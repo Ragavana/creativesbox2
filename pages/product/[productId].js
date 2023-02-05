@@ -197,7 +197,7 @@ function Product({ product, isSuccess }) {
                   })} */}
                 </LightGallery>
               </div>
-              <div className="ml-1 w-full md:w-2/6">
+              <div className="ml:1 2xl:ml-3 w-full md:w-2/6">
                 <RWebShare
                   data={{
                     text: `${product[0].description}`,
