@@ -16,7 +16,11 @@ import {
   IoArrowBackCircleOutline,
   IoArrowBackCircleSharp,
   IoArrowForward,
+  IoArrowRedoCircle,
+  IoArrowRedo,
+  IoCaretForwardCircle,
   IoShare,
+  IoShareOutline,
   IoShareSharp,
   IoShareSocial,
 } from "react-icons/io5";
@@ -32,6 +36,7 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import Image from "next/image";
+import { RWebShare } from "react-web-share";
 
 function Product({ product, isSuccess }) {
   const arrowStyles = {
@@ -58,6 +63,8 @@ function Product({ product, isSuccess }) {
     }
     return "outline";
   };
+
+  const prod = product[0];
 
   const router = useRouter();
   if (router.isFallback) {
@@ -99,7 +106,7 @@ function Product({ product, isSuccess }) {
       <Base>
         <section className="section">
           <section id="product">
-            <div className="flex flex-col md:flex-row">
+            <div className="md:mx-20 2xl:mx-44 flex -translate-y-12 flex-col md:flex-row">
               <div className="w-full bg-white md:w-5/6">
                 <LightGallery
                   mode="lg-fade"
@@ -145,22 +152,27 @@ function Product({ product, isSuccess }) {
                           // className="w-full px-4 py-4"
                           // style={{ height: `70vh` }}
                           placeholder="blur"
-                          className="rounded-b-lg border border-t-4"
+                          className="rounded-b-lg border"
                           blurDataURL="/images/blursample.png"
-                          width="300"
-                          height="300"
+                          width="2000"
+                          height="2000"
                           priority
-                          style={{ height: "50% !important", width: "200%" }}
+                         // style={{ height: "50% !important", width: "100%" }}
                           alt={`thumbnail-` + product[0]._id}
                           src={product[0].thumbnail}
                         />
+                        {/* <img
+                          style={{ height: "50% !important", width: "100%" }}
+                          alt={`thumbnail-` + product[0]._id}
+                          src={product[0].thumbnail}
+                        ></img> */}
                       </div>
                     </>
                   ) : (
                     <></>
                   )}
 
-                  {product[0].image.map((img, index) => {
+                  {/* {product[0].image.map((img, index) => {
                     return (
                       <div
                         key={`image-` + index}
@@ -182,120 +194,75 @@ function Product({ product, isSuccess }) {
                         />
                       </div>
                     );
-                  })}
+                  })} */}
                 </LightGallery>
               </div>
-              <div className="w-full md:w-3/6">
-                <button className="btn btn-outline-primary my-3text-sm m-2 capitalize">
-                  <div className="flex flex-row items-center space-x-2">
-                    <IoShareSharp /> <span>Share</span>
-                  </div>
-                </button>
-                <p className="mx-2 my-3 text-xl font-bold text-zinc-900">
+              <div className="ml-1 w-full md:w-2/6">
+                <RWebShare
+                  data={{
+                    text: `${product[0].description}`,
+                    url: `${product[0].thumbnail}`,
+                    title: `${product[0].title}`,
+                  }}
+                  onClick={() => console.log("shared successfully!")}
+                >
+                  <button>
+                    <div
+                      className="w-30 m-2 flex items-center justify-start space-x-1 rounded border border-zinc-300
+                    p-1 
+                   px-4 text-sm capitalize"
+                    >
+                      <IoArrowRedo className="text-sm text-[#706f83]" />
+                      <p className="font-semibold text-[#706f83]"> Share </p>
+                    </div>
+                  </button>
+                </RWebShare>
+
+                <p className="mx-2 mt-1 text-[20px] font-bold text-zinc-900 md:text-[22px] 2xl:text-[24px]">
                   {product[0].title}
                 </p>
-                <p className="m-2 my-3 text-sm font-light">
+                <p className="mx-2 mb-3 text-[11px] font-light md:text-[12px]">
                   {dateFormat(product[0].date, "mediumDate")}
                 </p>
                 {product[0].tags.map((tag, index) => {
                   return (
                     <button
                       key={`tags-` + index}
-                      className="btn btn-outline-grey m-1 my-3 text-xs
-                           capitalize"
+                      className="m-1 my-1  rounded 
+                       bg-[#f0f0f0] p-1 px-3 font-extrabold lowercase   text-[#000]
+                          md:text-[12px] 2xl:text-[13px]"
                     >
                       {tag}
                     </button>
                   );
                 })}
-                <p className="mx-2 my-3 text-lg  text-zinc-900">
+                <p className="mx-2 my-3 md:text-[12px] 2xl:text-[14px]  text-zinc-600">
                   {product[0].description}
                 </p>
                 <div className="m-2">
                   <a href={product[0].source} download>
                     <button
-                      className="btn btn-primary
-                my-3 h-14 w-full text-sm capitalize shadow-sm shadow-primary"
+                      className="btn-gradient mt-1 w-full rounded px-4 py-3 text-[13px] font-semibold capitalize
+              "
                     >
-                      Download
+                      download file
                     </button>
                   </a>
+                  <a href="/">
+                    <button
+                      className="btn my-2  mt-1 w-full rounded border-zinc-500 px-4 py-3 text-[13px] font-semibold capitalize
+              "
+                    >
+                      Shop More
+                    </button>
+                  </a>
+                  <p className="mx-10 text-center text-[11px] text-zinc-400">
+                    * Source files may not contain third-party content (e.g.
+                    icons, images)
+                  </p>
                 </div>
               </div>
             </div>
-
-            {/* <Carousel
-                autoPlay
-                interval="5000"
-                transitionTime="5000"
-                infiniteLoop
-                centerMode={true}
-                showThumbs={false}
-                showArrows={isMobile?false:true}
-                renderArrowNext={(onClickHandler, hasPrev, label) =>
-                  hasPrev && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      className=" h-10 w-10 rounded-full bg-zinc-200  text-lg hover:bg-zinc-800 hover:text-white"
-                      style={{ ...arrowStyles, right: 10 }}
-                    >
-                      <IoArrowForward className="ml-3" />
-                    </button>
-                  )
-                }
-                renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                  hasPrev && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      className=" h-10 w-10 rounded-full bg-zinc-200  text-lg hover:bg-zinc-800 hover:text-white"
-                      style={{ ...arrowStyles, left: 10 }}
-                    >
-                      <IoArrowBack className="ml-3" />
-                    </button>
-                  )
-                }
-                renderIndicator={(onClickHandler, isSelected, index, label) => {
-                  if (isSelected) {
-                    return (
-                      <li
-                        className="h-3 w-3 rounded-full bg-zinc-700"
-                        style={{ ...indicatorStyles }}
-                        aria-label={`Selected: ${label} ${index + 1}`}
-                        title={`Selected: ${label} ${index + 1}`}
-                      />
-                    );
-                  }
-                  return (
-                    <li
-                      className="h-3 w-3 rounded-full bg-zinc-200"
-                      style={indicatorStyles}
-                      onClick={onClickHandler}
-                      onKeyDown={onClickHandler}
-                      value={index}
-                      key={index}
-                      role="button"
-                      tabIndex={0}
-                      title={`${label} ${index + 1}`}
-                      aria-label={`${label} ${index + 1}`}
-                    />
-                  );
-                }}
-              >
-                {product[0].image.map((img, index) => {
-                  return (
-                    <div key={index} className="md:h-96">
-                      <img
-                        src={img}
-                        className="h-full w-full md:m-auto md:px-10"
-                      />
-                    </div>
-                  );
-                })}
-              </Carousel> */}
           </section>
         </section>
       </Base>

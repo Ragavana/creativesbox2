@@ -8,7 +8,13 @@ const { blog_folder } = config.settings;
 import ProductCard from "@components/productcard";
 
 // product pagination
-const ProductPagination = ({ products, authors, currentPage, pagination,isSuccess }) => {
+const ProductPagination = ({
+  products,
+  authors,
+  currentPage,
+  pagination,
+  isSuccess,
+}) => {
   const indexOfLastPost = currentPage * pagination;
   const indexOfFirstPost = indexOfLastPost - pagination;
   // const totalPages = Math.ceil(products.length / pagination);
@@ -22,8 +28,8 @@ const ProductPagination = ({ products, authors, currentPage, pagination,isSucces
           <Pagination totalPages={totalPages} currentPage={currentPage} /> */}
           <section id="products">
             <div
-              class="grid grid-cols-1 space-y-7 bg-white
-        md:grid-cols-3 md:space-y-0 md:space-x-0"
+              class="grid -translate-y-10  grid-cols-1 bg-white mx-24
+        md:grid-cols-3 2xl:grid-cols-4"
             >
               {isSuccess ? (
                 <>

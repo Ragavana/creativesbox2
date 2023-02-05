@@ -7,7 +7,7 @@ function Product({ isSuccess, products }) {
     <>
       <section id="products">
         <div
-          class="grid grid-cols-1  space-y-10 bg-white
+          class="grid grid-cols-1  bg-white
         md:space-y-0 md:space-x-0 md:m-2 md:grid-cols-2 lg:grid-cols-3 lg:space-y-0 lg:space-x-0 lg:m-2"
         >
           {isSuccess ? (

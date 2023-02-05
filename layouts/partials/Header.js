@@ -191,9 +191,9 @@ const Header = () => {
             >
               <IoSearch />
             </div>
-            <button className="btn btn-primary hidden text-xs capitalize md:ml-3 md:block">
+            {/* <button className="btn btn-primary hidden text-xs capitalize md:ml-3 md:block">
               Login
-            </button>
+            </button> */}
           </div>
 
           <SearchModal
