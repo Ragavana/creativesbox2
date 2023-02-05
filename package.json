@@ -28,7 +28,6 @@
     "react-icons": "^4.7.1",
     "react-loader-spinner": "^5.3.4",
     "react-responsive-carousel": "^3.2.23",
-    "react-rounded-image": "^2.0.14",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1"
   },
