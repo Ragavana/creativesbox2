@@ -64,7 +64,7 @@ function Product({ product, isSuccess }) {
     return "outline";
   };
 
-  const prod = product[0];
+  
 
   const router = useRouter();
   if (router.isFallback) {
@@ -248,7 +248,7 @@ function Product({ product, isSuccess }) {
                       download file
                     </button>
                   </a>
-                  <a href="/">
+                  <a href={`/`}>
                     <button
                       className="btn my-2  mt-1 w-full rounded border-zinc-500 px-4 py-3 text-[13px] font-semibold capitalize
               "
