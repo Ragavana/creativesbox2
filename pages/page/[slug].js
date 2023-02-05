@@ -28,7 +28,7 @@ const ProductPagination = ({
           <Pagination totalPages={totalPages} currentPage={currentPage} /> */}
           <section id="products">
             <div
-              class="grid -translate-y-10  grid-cols-1 bg-white mx-24
+              class="grid -translate-y-10  grid-cols-1 bg-white md:mx-24
         md:grid-cols-3 2xl:grid-cols-4"
             >
               {isSuccess ? (

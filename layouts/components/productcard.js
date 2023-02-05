@@ -4,7 +4,7 @@ import Link from "next/link";
 function ProductCard({ product }) {
   return (
     <>
-      <div class="item-container group mr-4 md:p-4 ">
+      <div class="item-container group mr-4 md:p-4 mb-4">
         <Link href={`product/${product.slug}`}>
           <div
             class="item relative rounded-lg bg-white shadow-xl shadow-[#f0effc] duration-500
